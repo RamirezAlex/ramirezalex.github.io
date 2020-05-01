@@ -20,7 +20,7 @@ body {
 }
 
 nav {
-  height: 50px;
+  height: 40px;
   background-color: #e75f04ee;
 }
 
@@ -37,15 +37,27 @@ header, section {
 }
 
 header img {
-  height: 260px;
-  display: inline-block;
-  border-radius: 50%;
 }
 
 .half-block {
   display: inline-block;
   vertical-align: middle;
   margin: 0 24px
+}
+
+.profile-image {
+  min-height: 260px;
+  min-width: 260px;
+  background: url("images/ramirezalex-white.jpg") no-repeat center;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.profile-image:hover {
+  background: url("images/ramirezalex-color.jpg") no-repeat center;
+  background-size: cover;
+  filter: grayscale(65%);
 }
 
 h1 {
@@ -83,5 +95,5 @@ footer {
   bottom: 0px;
   color: white;
   background-color: black;
-  padding: 40px;
+  padding: 20px;
 }
