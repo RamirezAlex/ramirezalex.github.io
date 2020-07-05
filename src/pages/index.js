@@ -8,12 +8,12 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div id="content">
       <header>
-        <div class="half-block">
+        <div className="half-block">
           <h1>Alex Ramirez</h1>
           <h2>Software Developer</h2>
         </div>
-        <div class="half-block">
-          <picture class="profile-image"></picture>
+        <div className="half-block">
+          <picture className="profile-image"></picture>
         </div>
       </header>
       <section id="info">
@@ -25,20 +25,20 @@ const IndexPage = () => (
       </section>
       <section id="social-media">
         <ul>
-          <li class="twitter">
-            <a target="_blank" rel="noreferrer" aria-label="Twitter - @RamirezAlex_" href="https://twitter.com/RamirezAlex_"><i class="fab fa-twitter-square"></i></a>
+          <li className="twitter">
+            <a target="_blank" rel="noreferrer" aria-label="Twitter - @RamirezAlex_" href="https://twitter.com/RamirezAlex_"><i className="fab fa-twitter-square"></i></a>
           </li>
-          <li class="github">
-            <a target="_blank" rel="noreferrer" aria-label="Github - @RamirezAlex" href="https://github.com/RamirezAlex"><i class="fab fa-github-square"></i></a>
+          <li className="github">
+            <a target="_blank" rel="noreferrer" aria-label="Github - @RamirezAlex" href="https://github.com/RamirezAlex"><i className="fab fa-github-square"></i></a>
           </li>
-          <li class="linkedin">
-            <a target="_blank" rel="noreferrer" aria-label="LinkedIn - @ramirezalex1" href="https://www.linkedin.com/in/ramirezalex1/"><i class="fab fa-linkedin"></i></a>
+          <li className="linkedin">
+            <a target="_blank" rel="noreferrer" aria-label="LinkedIn - @ramirezalex1" href="https://www.linkedin.com/in/ramirezalex1/"><i className="fab fa-linkedin"></i></a>
           </li>
-          <li class="instagram">
-            <a target="_blank" rel="noreferrer" aria-label="Instagram - @_ramirezalex" href="https://www.instagram.com/_ramirezalex/"><i class="fab fa-instagram"></i></a>
+          <li className="instagram">
+            <a target="_blank" rel="noreferrer" aria-label="Instagram - @_ramirezalex" href="https://www.instagram.com/_ramirezalex/"><i className="fab fa-instagram"></i></a>
           </li>
-          <li class="facebook">
-            <a target="_blank" rel="noreferrer" aria-label="Facebook - @ramirezalex4" href="https://www.facebook.com/ramirezalex4"><i class="fab fa-facebook"></i></a>
+          <li className="facebook">
+            <a target="_blank" rel="noreferrer" aria-label="Facebook - @ramirezalex4" href="https://www.facebook.com/ramirezalex4"><i className="fab fa-facebook"></i></a>
           </li>
         </ul>
       </section>
