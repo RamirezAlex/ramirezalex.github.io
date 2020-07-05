@@ -4,7 +4,7 @@ module.exports = {
     description: `Software Developer with focus in JavaScript and Node.js`,
     author: {
       name: `Alex Ramirez`,
-      summary: `who lives and works in Medellin building useful things.`,
+      summary: `Alex is Software Developer living in Medellin, Colombia with experience in different programming languages and technologies, particularly JavaScript and Node.js`,
     },
     siteUrl: `https://ramirezalex.com/`,
     social: {

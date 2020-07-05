@@ -13,7 +13,7 @@ const IndexPage = () => (
           <h2>Software Developer</h2>
         </div>
         <div class="half-block">
-          <div class="profile-image"></div>
+          <picture class="profile-image"></picture>
         </div>
       </header>
       <section id="info">

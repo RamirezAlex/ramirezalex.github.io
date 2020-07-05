@@ -4,7 +4,7 @@
 }
 
 html {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -39,18 +39,22 @@ a {
 }
 
 main {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 #content {
   flex: 1;
-  height: 100%;
+  min-height: 100%;
 }
 
 header, section {
-  padding: 50px 0;
+  padding: 50px 30px;
+}
+
+article {
+  text-align: justify;
 }
 
 .half-block {
@@ -83,6 +87,18 @@ header, section {
   color: rgb(255, 255, 255);
 }
 
+#bio .profile-biok-image, #bio p {
+  vertical-align: top;
+}
+
+#bio p {
+  width: 85%;
+  display: inline-block;
+}
+
+.dark-mode .profile-biok-image {
+  filter: invert(1);
+}
 
 h1 {
   font-size: 48px;
@@ -98,9 +114,11 @@ h2 {
 #info {
   font-size: 24px;
   line-height: 48px;
+}
+
+#info, .blog-article {
   border-top: solid 1px #f3d299;
   border-bottom: solid 1px #f3d299;
-  padding: 50px 30px;
 }
 
 #social-media ul {
@@ -124,6 +142,30 @@ footer {
   padding: 20px;
 }
 
+.page-blog section {
+  padding: 20px 30px;
+}
+
+.page-blog .blog-headings {
+  padding-top: 40px;
+}
+
+.page-blog nav {
+  padding: 10px 0px 0px;
+}
+
+.page-blog ul {
+  margin-right: 1.45rem;
+}
+
+.page-blog nav a {
+  color: black;
+}
+
+.dark-mode .page-blog nav a {
+  color: white;
+}
+
 /* 
  * Purpose:
  * Assign height: "100%" to
@@ -133,6 +175,7 @@ footer {
 
 html, body, #___gatsby, #gatsby-focus-wrapper {
   height: 100%;
+  min-height: 100%;
 }
 
 body {
