@@ -82,6 +82,10 @@ article {
   filter: invert(1);
 }
 
+.dark-mode .profile-image:hover {
+  filter: invert(0) grayscale(65%);
+}
+
 .dark-mode #content {
   background-color: rgb(12, 16, 32);
   color: rgb(255, 255, 255);
@@ -103,12 +107,12 @@ article {
 h1 {
   font-size: 48px;
   color: #4b84ee;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 h2 {
   font-size: 36px;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 #info {

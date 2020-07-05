@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useL } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
     return [storedValue, setValue];
   }
 
-  const [isDarkMode,  turnOffTheLight] = useLocalStorage('isDarkMode', false)
+  const [isDarkMode,  turnOffTheLight] = useLocalStorage('isDarkMode', window.localStorage.getItem('isDarkMode') && window.localStorage.getItem('isDarkMode'))
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
