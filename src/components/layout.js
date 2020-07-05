@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
     return [storedValue, setValue];
   }
 
-  const [isDarkMode,  turnOffTheLight] = useLocalStorage('isDarkMode', typeof window !== 'undefined' && window.localStorage.getItem('isDarkMode'))
+  const [isDarkMode,  turnOffTheLight] = useLocalStorage('isDarkMode', window.localStorage.getItem('isDarkMode') && window.localStorage.getItem('isDarkMode'))
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
