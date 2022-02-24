@@ -52,7 +52,9 @@ const Layout = ({ children }) => {
     return [storedValue, setValue];
   }
 
-  const [isDarkMode,  turnOffTheLight] = useLocalStorage('isDarkMode', window.localStorage.getItem('isDarkMode') && window.localStorage.getItem('isDarkMode'))
+  const isBrowser = () => typeof window !== "undefined";
+  const darkModeInitValue = isBrowser() && window.localStorage.getItem('isDarkMode') && window.localStorage.getItem('isDarkMode');
+  const [isDarkMode,  turnOffTheLight] = useLocalStorage('isDarkMode', darkModeInitValue);
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -62,7 +64,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -80,7 +82,7 @@ const Layout = ({ children }) => {
         </footer>
       </main>
     </>
-  )
+  );
 }
 
 Layout.propTypes = {
