@@ -10,7 +10,7 @@ const IndexPage = () => (
       <header>
         <div className="half-block">
           <h1>Alex Ramirez</h1>
-          <h2>Software Developer</h2>
+          <h2>Software Engineer</h2>
         </div>
         <div className="half-block">
           <picture className="profile-image"></picture>
