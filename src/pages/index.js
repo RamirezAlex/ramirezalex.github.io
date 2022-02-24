@@ -18,8 +18,8 @@ const IndexPage = () => (
       </header>
       <section id="info">
         <p>
-          Software Developer * JavaScript Lover * Python Enthusiastic<br />
-          Machine Learning Newcomer * Blockchain Padawan * Rust Apprentice<br />
+          Software Engineer * JavaScript Lover * Python Enthusiastic<br />
+          Go Learner * Blockchain Padawan * Rust Apprentice<br />
           co-organizer of <a target="_blank" rel="noreferrer" href="https://twitter.com/medellinjs">@MedellinJS</a>
         </p>
       </section>
