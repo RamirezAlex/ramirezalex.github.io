@@ -76,7 +76,7 @@ const Layout = ({ children }) => {
         <Navbar turnOffTheLight={turnOffTheLight} isDarkMode={isDarkMode} />
         {children}
         <footer>
-          RamirezAlex - 2020
+          RamirezAlex - 2022
         </footer>
       </main>
     </>
