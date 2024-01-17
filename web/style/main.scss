@@ -1,0 +1,198 @@
+@font-face {
+  font-family: NotoMono;
+  src: url(../fonts/NotoMono-Regular.ttf);
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.5em;
+  font-family: NotoMono;
+  color: rgb(54, 50, 50);
+}
+
+nav {
+  height: 40px;
+  background-color: #e75f04ee;
+}
+
+nav button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 7px;
+  cursor: pointer;
+  font-family: NotoMono;
+  font-size: 14px;
+}
+
+nav button:focus {
+  outline:0;
+}
+
+a {
+  color: #e75f04ee;
+}
+
+main {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1;
+  min-height: 100%;
+}
+
+header, section {
+  padding: 50px 30px;
+}
+
+article {
+  text-align: justify;
+}
+
+.half-block {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 24px
+}
+
+.profile-image {
+  min-height: 260px;
+  min-width: 260px;
+  background: url("../images/ramirezalex-white.png") no-repeat center;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.profile-image:hover {
+  background: url("../images/ramirezalex-color.jpg") no-repeat center;
+  background-size: cover;
+  filter: grayscale(65%);
+}
+
+.dark-mode .profile-image {
+  filter: invert(1);
+}
+
+.dark-mode .profile-image:hover {
+  filter: invert(0) grayscale(65%);
+}
+
+.dark-mode #content {
+  background-color: rgb(12, 16, 32);
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode nav button {
+  color: rgb(255, 255, 255);
+}
+
+#bio .profile-biok-image, #bio p {
+  vertical-align: top;
+}
+
+#bio p {
+  width: 85%;
+  display: inline-block;
+}
+
+.dark-mode .profile-biok-image {
+  filter: invert(1);
+}
+
+h1 {
+  font-size: 48px;
+  color: #4b84ee;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 2rem;
+}
+
+#info {
+  font-size: 24px;
+  line-height: 48px;
+}
+
+#info, .blog-article {
+  border-top: solid 1px #f3d299;
+  border-bottom: solid 1px #f3d299;
+}
+
+#social-media ul {
+  list-style: none;
+}
+
+#social-media ul li {
+  display: inline-block
+}
+
+#social-media ul li .fab {
+  font-size: 64px;
+  color: #4b84ee;
+  margin: 0 15px;
+}
+
+footer {
+  bottom: 0px;
+  color: white;
+  background-color: black;
+  padding: 20px;
+}
+
+.page-blog section {
+  padding: 20px 30px;
+}
+
+.page-blog .blog-headings {
+  padding-top: 40px;
+}
+
+.page-blog nav {
+  padding: 10px 0px 0px;
+}
+
+.page-blog ul {
+  margin-right: 1.45rem;
+}
+
+.page-blog nav a {
+  color: black;
+}
+
+.dark-mode .page-blog nav a {
+  color: white;
+}
+
+/* 
+ * Purpose:
+ * Assign height: "100%" to
+ * html, body, #___gatsby &  
+ * div with role="group"
+*/
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+div[role="group"][tabindex] {
+  height: 100%;
+}
