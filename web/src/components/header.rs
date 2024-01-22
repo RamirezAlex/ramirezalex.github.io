@@ -1,5 +1,3 @@
-use crate::components::nav::Nav;
-
 use leptos::*;
 
 #[component]

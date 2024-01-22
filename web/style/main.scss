@@ -19,7 +19,7 @@ body {
 }
 
 nav {
-  height: 40px;
+  padding: 15px;
   background-color: #e75f04ee;
 }
 
@@ -30,7 +30,11 @@ nav button {
   margin-top: 7px;
   cursor: pointer;
   font-family: NotoMono;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+nav svg {
+  color: rgb(54, 50, 50);
 }
 
 nav button:focus {
@@ -49,7 +53,7 @@ main {
 
 #content {
   flex: 1;
-  min-height: 100%;
+  min-height: calc(100vh - 120px);
 }
 
 header, section {
@@ -98,13 +102,33 @@ article {
   color: rgb(255, 255, 255);
 }
 
+.dark-mode nav svg {
+  color: rgb(255, 255, 255);
+}
+
+picture {
+  display: flex;
+  align-items: center;
+}
+
 #bio .profile-biok-image, #bio p {
   vertical-align: top;
+}
+
+#bio .profile-biok-image {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 20px;
+  vertical-align: middle;
 }
 
 #bio p {
   width: 85%;
   display: inline-block;
+  text-align: justify;
 }
 
 .dark-mode .profile-biok-image {
@@ -130,6 +154,11 @@ h2 {
 #info, .blog-article {
   border-top: solid 1px #f3d299;
   border-bottom: solid 1px #f3d299;
+}
+
+.blog-article img {
+  max-width: 100%;
+  height: auto;
 }
 
 #social-media ul {
@@ -162,11 +191,16 @@ footer {
 }
 
 .page-blog nav {
-  padding: 10px 0px 0px;
+  padding: 10px 0px;
 }
 
 .page-blog ul {
   margin-right: 1.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 30px;
 }
 
 .page-blog nav a {

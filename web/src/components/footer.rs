@@ -4,7 +4,7 @@ use leptos::*;
 pub fn Footer() -> impl IntoView {
     view! {
         <footer>
-          RamirezAlex - 2024
+            RamirezAlex - 2024
         </footer>
     }
 }
