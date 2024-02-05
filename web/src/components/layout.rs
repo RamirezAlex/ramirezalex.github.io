@@ -6,7 +6,7 @@ use leptos::*;
 
 #[component]
 pub fn Layout(children: Children) -> impl IntoView {
-    let (mode, set_mode) = create_signal(String::from("light-mode"));
+    let (mode, set_mode) = create_signal(String::from("dark-mode"));
 
     view! {
         <div class=mode>
