@@ -1,17 +1,11 @@
 use crate::components::bio::Bio;
 use crate::components::layout::Layout;
+use crate::types::blog_post::BlogPost;
 use konfiguration::Konfiguration;
 use leptos::*;
 use leptos_router::use_params_map;
-use serde::Deserialize;
 use std::fs;
 extern crate markdown;
-
-#[derive(Debug, Deserialize)]
-pub struct BlogPost {
-    title: String,
-    date: String,
-}
 
 #[component]
 pub fn Blog() -> impl IntoView {
@@ -25,8 +19,7 @@ pub fn Blog() -> impl IntoView {
 
     let file_path = format!("./content/blog/{}/index", slug);
 
-    let handle_error = |e: &dyn std::error::Error| {
-        leptos::logging::error!("Error: {}", e);
+    let handle_error = |_: &dyn std::error::Error| {
         return view! { <Layout>{"404 content not found!"}</Layout> };
     };
 

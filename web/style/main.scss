@@ -3,56 +3,59 @@
   src: url(../fonts/NotoMono-Regular.ttf);
 }
 
-html {
+html, body {
+  height: 100%;
+  margin: 0 auto;
   min-height: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  text-align: center;
-  margin: 0 auto;
+  color: rgb(54, 50, 50);
+  font-family: NotoMono;
   line-height: 1.5em;
-  font-family: NotoMono;
-  color: rgb(54, 50, 50);
-}
-
-nav {
-  padding: 15px;
-  background-color: #e75f04ee;
-}
-
-nav button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin-top: 7px;
-  cursor: pointer;
-  font-family: NotoMono;
-  font-size: 16px;
-}
-
-nav svg {
-  color: rgb(54, 50, 50);
-}
-
-nav button:focus {
-  outline:0;
+  text-align: center;
 }
 
 a {
   color: #e75f04ee;
 }
 
+nav {
+  background-color: #e75f04ee;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px;
+
+  a {
+    color: rgb(54, 50, 50);
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: NotoMono;
+    font-size: 16px;
+    margin-top: 7px;
+    padding: 0;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  svg {
+    color: rgb(54, 50, 50);
+  }
+}
+
 main {
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 #content {
-  flex: 1;
   min-height: calc(100vh - 120px);
 }
 
@@ -98,7 +101,7 @@ article {
   color: rgb(255, 255, 255);
 }
 
-.dark-mode nav button {
+.dark-mode nav button, .dark-mode nav a {
   color: rgb(255, 255, 255);
 }
 
@@ -177,9 +180,55 @@ h2 {
 
 footer {
   bottom: 0px;
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: black;
   padding: 20px;
+}
+
+.page-blog-index {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 50px;
+  list-style: none;
+  justify-content: center;
+  text-decoration: none;
+
+  li {
+    color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 20px;
+    width: 460px;
+    height: 430px;
+    border: 1px solid #e75f04ee;
+    border-radius: 10px;
+
+    a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.4em;
+      color: #e75f04ee;
+      padding: 0 15px;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.4em;
+      text-align: justify;
+      padding: 0 15px;
+    }
+
+    img {
+      max-width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
 }
 
 .page-blog section {
@@ -194,7 +243,7 @@ footer {
   padding: 10px 0px;
 }
 
-.page-blog ul {
+.page-blog nav ul {
   margin-right: 1.45rem;
   display: flex;
   flex-wrap: wrap;
@@ -209,24 +258,4 @@ footer {
 
 .dark-mode .page-blog nav a {
   color: white;
-}
-
-/* 
- * Purpose:
- * Assign height: "100%" to
- * html, body, #___gatsby &  
- * div with role="group"
-*/
-
-html, body, #___gatsby, #gatsby-focus-wrapper {
-  height: 100%;
-  min-height: 100%;
-}
-
-body {
-  margin: 0px;
-}
-
-div[role="group"][tabindex] {
-  height: 100%;
 }

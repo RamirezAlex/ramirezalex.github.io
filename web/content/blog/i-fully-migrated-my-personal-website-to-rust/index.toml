@@ -1,0 +1,4 @@
+title = "I fully migrated my personal website to Rust"
+date = "2024-02-15"                                                                                                                    # T22:12:03.284Z
+description = "I have migrated my personal website to Rust with Leptos and Axum. I tell you about how to do Full Stack Rust and WASM."
+image_url = "images/rust-leptos.webp"

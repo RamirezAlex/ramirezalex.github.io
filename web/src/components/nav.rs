@@ -1,6 +1,7 @@
 use icondata as i;
 use leptos::*;
 use leptos_icons::Icon;
+use leptos_router::A;
 
 #[component]
 pub fn Nav(setter: WriteSignal<String>) -> impl IntoView {
@@ -22,10 +23,16 @@ pub fn Nav(setter: WriteSignal<String>) -> impl IntoView {
 
     view! {
         <nav>
-            <button on:click=handle_click>
-                Turn {mode_label} the light
-            </button>
-            <Icon icon=icon_mode width="1em" height="1em" style="padding-left: 10px; vertical-align: middle"/>
+            <div class="main-menu">
+                <A href="/">Home</A>
+                <A href="/blog">Blog</A>
+            </div>
+            <div class="mode-menu">
+                <button on:click=handle_click>
+                    Turn {mode_label} the light
+                </button>
+                <Icon icon=icon_mode width="1em" height="1em" style="padding-left: 10px; vertical-align: middle"/>
+            </div>
         </nav>
     }
 }
