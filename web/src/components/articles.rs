@@ -45,9 +45,9 @@ fn get_blog_post_list() -> Vec<BlogPost> {
 pub fn Articles() -> impl IntoView {
     let posts = get_blog_post_list(); // Assuming this returns Vec<BlogPost>
 
-    let posts: Vec<BlogPost> = (0..16)
-        .flat_map(|_| posts.clone()) // Clone `posts` for each iteration
-        .collect();
+    // let posts: Vec<BlogPost> = (0..16)
+    //     .flat_map(|_| posts.clone()) // Clone `posts` for each iteration
+    //     .collect();
 
     view! {
         <ul class="page-blog-index">
