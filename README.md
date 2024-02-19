@@ -1,99 +1,86 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+<picture>
+    <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_Solid_White.svg" media="(prefers-color-scheme: dark)">
+    <img src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg" alt="Leptos Logo">
+</picture>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+# Leptos Axum Starter Template
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+This is a template for use with the [Leptos](https://github.com/leptos-rs/leptos) web framework and the [cargo-leptos](https://github.com/akesson/cargo-leptos) tool using [Axum](https://github.com/tokio-rs/axum).
 
-## 🚀 Quick start
+## Creating your template repo
 
-1.  **Create a Gatsby site.**
+If you don't have `cargo-leptos` installed you can install it with
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+```bash
+cargo install cargo-leptos
+```
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+Then run
+```bash
+cargo leptos new --git leptos-rs/start-axum
+```
 
-1.  **Start developing.**
+to generate a new project template.
 
-    Navigate into your new site’s directory and start it up.
+```bash
+cd web
+```
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+to go to your newly created project.  
+Feel free to explore the project structure, but the best place to start with your application code is in `src/app.rs`.  
+Addtionally, Cargo.toml may need updating as new versions of the dependencies are released, especially if things are not working after a `cargo update`.
 
-1.  **Open the source code and start editing!**
+## Running your project
 
-    Your site is now running at `http://localhost:8000`!
+```bash
+cargo leptos watch
+```
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+## Installing Additional Tools
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+By default, `cargo-leptos` uses `nightly` Rust, `cargo-generate`, and `sass`. If you run into any trouble, you may need to install one or more of these tools.
 
-## 🧐 What's inside?
+1. `rustup toolchain install nightly --allow-downgrade` - make sure you have Rust nightly
+2. `rustup target add wasm32-unknown-unknown` - add the ability to compile Rust to WebAssembly
+3. `cargo install cargo-generate` - install `cargo-generate` binary (should be installed automatically in future)
+4. `npm install -g sass` - install `dart-sass` (should be optional in future
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+## Compiling for Release
+```bash
+cargo leptos build --release
+```
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+Will generate your server binary in target/server/release and your site package in target/site
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+## Testing Your Project
+```bash
+cargo leptos end-to-end
+```
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+```bash
+cargo leptos end-to-end --release
+```
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+Cargo-leptos uses Playwright as the end-to-end test tool.  
+Tests are located in end2end/tests directory.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+## Executing a Server on a Remote Machine Without the Toolchain
+After running a `cargo leptos build --release` the minimum files needed are:
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+1. The server binary located in `target/server/release`
+2. The `site` directory and all files within located in `target/site`
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+Copy these files to your remote server. The directory structure should be:
+```text
+web
+site/
+```
+Set the following environment variables (updating for your project as needed):
+```text
+LEPTOS_OUTPUT_NAME="web"
+LEPTOS_SITE_ROOT="site"
+LEPTOS_SITE_PKG_DIR="pkg"
+LEPTOS_SITE_ADDR="127.0.0.1:3000"
+LEPTOS_RELOAD_PORT="3001"
+```
+Finally, run the server binary.
