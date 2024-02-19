@@ -21,6 +21,12 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY . .
 
+# Install nodejs
+RUN apt-get update && apt-get install -y nodejs npm
+
+# Install sass
+RUN npm install -g sass
+
 # Build the app
 RUN cargo leptos build --release -vv
 
