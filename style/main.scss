@@ -1,6 +1,19 @@
 @font-face {
-  font-family: NotoMono;
-  src: url(../fonts/NotoMono-Regular.ttf);
+  font-family: NotoSansMono;
+  src: url(../fonts/NotoSansMono-Thin.ttf);
+  font-weight: lighter;
+}
+
+
+@font-face {
+  font-family: NotoSansMono;
+  src: url(../fonts/NotoSansMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: NotoSansMono;
+  src: url(../fonts/NotoSansMono-SemiBold.ttf);
+  font-weight: bold;
 }
 
 html, body {
@@ -11,7 +24,7 @@ html, body {
 
 body {
   color: rgb(54, 50, 50);
-  font-family: NotoMono;
+  font-family: NotoSansMono;
   line-height: 1.5em;
   text-align: center;
 }
@@ -36,7 +49,7 @@ nav {
     background: none;
     border: none;
     cursor: pointer;
-    font-family: NotoMono;
+    font-family: NotoSansMono;
     font-size: 16px;
     margin-top: 7px;
     padding: 0;
@@ -101,11 +114,7 @@ article {
   color: rgb(255, 255, 255);
 }
 
-.dark-mode nav button, .dark-mode nav a {
-  color: rgb(255, 255, 255);
-}
-
-.dark-mode nav svg {
+.dark-mode nav svg, .dark-mode nav button, .dark-mode nav a {
   color: rgb(255, 255, 255);
 }
 
@@ -140,12 +149,14 @@ picture {
 
 h1 {
   font-size: 48px;
+  font-weight: 300;
   color: #4b84ee;
   line-height: 3.5rem;
 }
 
 h2 {
   font-size: 36px;
+  font-weight: 300;
   line-height: 1rem;
 }
 
