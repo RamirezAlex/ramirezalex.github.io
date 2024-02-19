@@ -22,7 +22,7 @@ WORKDIR /app
 COPY . .
 
 # Build the app
-RUN cargo leptos build --release -v
+RUN cargo leptos build --release -vv
 
 FROM rustlang/rust:nightly-bullseye as runner
 # Copy the server binary to the /app directory
