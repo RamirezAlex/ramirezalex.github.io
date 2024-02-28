@@ -77,7 +77,7 @@ header, section {
 }
 
 article {
-  text-align: justify;
+  text-align: left;
 }
 
 .half-block {
@@ -171,7 +171,9 @@ h2 {
 }
 
 .blog-article img {
-  max-width: 100%;
+  display: block;
+  max-width: 60%;
+  margin: 20px auto;
   height: auto;
 }
 
@@ -229,8 +231,8 @@ footer {
     p {
       font-size: 1em;
       line-height: 1.4em;
-      text-align: justify;
       padding: 0 15px;
+      text-align: left;
     }
 
     img {
@@ -283,3 +285,26 @@ footer {
     font-size: 32px;
   }
 }
+
+/* Color styles */
+.hh1 { color: #FF79C6; } /* attribute - Pink */
+.hh2 { color: #BD93F9; } /* constant - Purple */
+.hh3 { color: #50FA7B; } /* function.builtin - Green */
+.hh4 { color: #50FA7B; } /* function - Green */
+.hh5 { color: #FF79C6; } /* keyword - Pink */
+.hh6 { color: #F1FA8C; } /* operator - Light Yellow */
+.hh7 { color: #BD93F9; } /* property - Purple */
+.hh8 { color: #F8F8F2; } /* punctuation - Light Foreground */
+.hh9 { color: #F8F8F2; } /* punctuation.bracket - Light Foreground */
+.hh10 { color: #F8F8F2; } /* punctuation.delimiter - Light Foreground */
+.hh11 { color: #F1FA8C; } /* string - Light Yellow */
+.hh12 { color: #F1FA8C; } /* string.special - Light Yellow */
+.hh13 { color: #F8F8F2; } /* tag - Light Foreground */
+.hh14 { color: #8BE9FD; } /* type - Cyan */
+.hh15 { color: #8BE9FD; } /* type.builtin - Cyan */
+.hh16 { color: #50FA7B; } /* variable - Green */
+.hh17 { color: #FFB86C; } /* variable.builtin - Orange */
+.hh18 { color: #FFB86C; } /* variable.parameter - Orange */
+.hh19 { color: #6272A4; } /* comment - Comment Grey */
+.hh20 { color: #FFB86C; } /* macro - Orange */
+.hh21 { color: #FF5555; } /* label - Red */

@@ -1,7 +1,7 @@
 use crate::error_template::{AppError, ErrorTemplate};
 use crate::pages::blog::Blog;
-use crate::pages::blog_index::BlogIndex;
 use crate::pages::home::Home;
+use crate::pages::post::Post;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
@@ -31,8 +31,8 @@ pub fn App() -> impl IntoView {
             <main>
                 <Routes>
                     <Route path="/" view=Home/>
-                    <Route path="/blog/:slug" view=Blog/>
-                    <Route path="/blog" view=BlogIndex/>
+                    <Route path="/blog/:slug" view=Post/>
+                    <Route path="/blog" view=Blog/>
                 </Routes>
             </main>
         </Router>

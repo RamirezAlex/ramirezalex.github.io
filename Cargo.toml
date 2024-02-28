@@ -29,6 +29,7 @@ icondata = "0.3.0"
 markdown = "0.3.0"
 konfiguration = "1.2.0"
 serde = "1.0.196"
+gray_matter = "0.2.6"
 
 [features]
 hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]
