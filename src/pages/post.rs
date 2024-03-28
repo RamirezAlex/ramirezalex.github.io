@@ -15,7 +15,7 @@ pub fn Post() -> impl IntoView {
         None => return view! { <Layout>{"Blog Index"}</Layout> },
     };
 
-    let handle_error = |_: &dyn std::error::Error| {
+    let _handle_error = |_: &dyn std::error::Error| {
         return view! { <Layout>{"404 content not found!"}</Layout> };
     };
 

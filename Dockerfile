@@ -27,6 +27,11 @@ RUN apt-get update && apt-get install -y nodejs npm
 # Install sass
 RUN npm install -g sass
 
+
+RUN cargo install wasm-server-runner
+RUN cargo install -f wasm-bindgen-cli
+RUN cargo update -p wasm-bindgen
+
 # Build the app
 RUN cargo leptos build --release -vv
 
