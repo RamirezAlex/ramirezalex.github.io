@@ -12,7 +12,7 @@ pub fn Footer() -> impl IntoView {
                     gtag('js', new Date());
                     gtag('config', 'G-LMD9JFSZTB');
             "#}</Script>
-            RamirezAlex - 2024
+            RamirezAlex - 2026
         </footer>
     }
 }
