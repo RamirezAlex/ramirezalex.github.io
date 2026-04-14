@@ -4,34 +4,30 @@ use leptos_icons::Icon;
 use leptos_router::A;
 
 #[component]
-pub fn Nav(setter: WriteSignal<String>) -> impl IntoView {
-    let (icon_mode, set_icon_mode) = create_signal(i::BsSun);
-    let (mode_label, set_mode_label) = create_signal("on");
-    let handle_click = move |_| {
-        set_icon_mode.update(move |mode| {
-            if *mode == i::BsMoonStars {
-                *mode = i::BsSun;
-                set_mode_label("on");
-                setter.set(String::from("dark-mode"));
-            } else {
-                *mode = i::BsMoonStars;
-                set_mode_label("off");
-                setter.set(String::from("light-mode"));
-            }
-        })
-    };
+pub fn Nav(dark: ReadSignal<bool>, set_dark: WriteSignal<bool>) -> impl IntoView {
+    let icon = Signal::derive(move || if dark.get() { i::BsSun } else { i::BsMoonStars });
 
     view! {
-        <nav>
-            <div class="main-menu">
-                <A href="/">Home</A>
-                <A href="/blog">Blog</A>
-            </div>
-            <div class="mode-menu">
-                <button on:click=handle_click>
-                    Turn {mode_label} the light
+        <nav class="site-nav">
+            <A class="nav-logo" href="/">"AR"</A>
+            <div class="nav-links">
+                <A class="nav-link" href="/blog">"Blog"</A>
+                <a
+                    class="nav-link"
+                    href="https://github.com/RamirezAlex"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    "GitHub"
+                </a>
+                <button
+                    class="mode-toggle"
+                    on:click=move |_| set_dark.update(|d| *d = !*d)
+                    aria-label="Toggle dark mode"
+                >
+                    <Icon icon=icon width="16px" height="16px" />
                 </button>
-                <Icon icon=icon_mode width="1em" height="1em" style="padding-left: 10px; vertical-align: middle"/>
+                <a class="nav-cta" href="mailto:alexander.ramirez@gmail.com">"Let's talk"</a>
             </div>
         </nav>
     }
