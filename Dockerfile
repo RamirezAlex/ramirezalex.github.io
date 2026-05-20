@@ -21,8 +21,10 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY . .
 
-# Install nodejs
-RUN apt-get update && apt-get install -y nodejs npm
+# Install Node.js (>=18) for Sass
+RUN apt-get update && apt-get install -y curl ca-certificates
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
 
 # Install sass
 RUN npm install -g sass
@@ -32,8 +34,8 @@ RUN cargo install wasm-server-runner
 RUN cargo install -f wasm-bindgen-cli
 RUN cargo update -p wasm-bindgen
 
-# Build the app
-RUN cargo leptos build --release -vv
+# Build the app (with backtrace for clearer errors)
+RUN RUST_BACKTRACE=full cargo leptos build --release -vv
 
 FROM rustlang/rust:nightly-bullseye as runner
 # Copy the server binary to the /app directory
