@@ -195,11 +195,11 @@ pub fn Home() -> impl IntoView {
                     </a>
                     <a
                         class="btn-secondary"
-                        href="https://x.com/RamirezAlex_"
+                        href="https://x.com/RamirezAlex"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        "x.com/RamirezAlex_"
+                        "x.com/RamirezAlex"
                     </a>
                 </div>
             </section>

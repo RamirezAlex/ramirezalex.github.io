@@ -1,17 +1,34 @@
 use crate::types::post::Post;
 use crate::types::post::PostMeta;
+#[cfg(feature = "ssr")]
 use gray_matter::engine::TOML;
+#[cfg(feature = "ssr")]
 use gray_matter::Matter;
 use leptos::*;
+#[cfg(feature = "ssr")]
 use std::fs;
+#[cfg(feature = "ssr")]
 use std::path::Path;
 
-pub fn get_posts_list() -> Vec<PostMeta> {
+#[server]
+pub async fn get_posts_list() -> Result<Vec<PostMeta>, ServerFnError> {
+    get_posts_list_from_fs().map_err(|e| ServerFnError::ServerError(e.to_string()))
+}
+
+#[server]
+pub async fn get_post(slug: String) -> Result<Post, ServerFnError> {
+    get_post_by_slug(&slug).map_err(|_| {
+        ServerFnError::ServerError(String::from("Failed to get post by slug"))
+    })
+}
+
+#[cfg(feature = "ssr")]
+fn get_posts_list_from_fs() -> Result<Vec<PostMeta>, Box<dyn std::error::Error>> {
     let path = match Path::new("./content/blog/").canonicalize() {
         Ok(p) => p,
         Err(e) => {
             eprintln!("Failed to canonicalize path: {}", e);
-            return Vec::new();
+            return Ok(Vec::new());
         }
     };
 
@@ -19,11 +36,11 @@ pub fn get_posts_list() -> Vec<PostMeta> {
         Ok(p) => p,
         Err(e) => {
             eprintln!("Failed to read directory: {}", e);
-            return Vec::new();
+            return Ok(Vec::new());
         }
     };
 
-    paths
+    let posts = paths
         .filter_map(|entry| {
             let entry = match entry {
                 Ok(e) => e,
@@ -34,21 +51,16 @@ pub fn get_posts_list() -> Vec<PostMeta> {
             };
             let path_str = entry.path().to_str()?.to_string(); // Skip if path is not valid UTF-8
             let slug = path_str.split('/').last()?.split('.').next()?; // Skip if path is not valid UTF-8
-            let post = get_post_by_slug(slug).ok()?; // Skip if post is not valid
+            let mut post = get_post_by_slug(slug).ok()?; // Skip if post is not valid
+            post.meta.slug = slug.to_string();
             Some(post.meta) // Return the successfully parsed Post
         })
-        .collect()
+        .collect();
+
+    Ok(posts)
 }
 
-pub fn get_post(slug: &str) -> Result<Post, ServerFnError> {
-    match get_post_by_slug(slug) {
-        Ok(p) => Ok(p),
-        Err(_) => Err(ServerFnError::ServerError(String::from(
-            "Failed to get post by slug",
-        ))),
-    }
-}
-
+#[cfg(feature = "ssr")]
 fn get_post_by_slug(slug: &str) -> Result<Post, Box<dyn std::error::Error>> {
     let matter = Matter::<TOML>::new();
 

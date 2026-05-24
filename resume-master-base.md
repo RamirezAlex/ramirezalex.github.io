@@ -4,7 +4,7 @@ Medellín, Colombia
 alexander.ramirez@gmail.com  
 https://ramirezalex.com  
 https://github.com/RamirezAlex  
-https://x.com/RamirezAlex_
+https://x.com/RamirezAlex
 
 ## Professional Summary
 

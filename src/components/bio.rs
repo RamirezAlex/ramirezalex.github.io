@@ -12,8 +12,8 @@ pub fn Bio() -> impl IntoView {
                 />
                 <p>
                     Written by <strong>Alex Ramirez.</strong> Alex is Software Developer based in Medellin, Colombia with experience in different programming languages and technologies, particularly Rust and TypeScript. He also is very interested in the Web3 ecosystem, espcially in Solana Blockchain.
-                    <a href="https://twitter.com/RamirezAlex_">
-                        @RamirezAlex_
+                    <a href="https://x.com/RamirezAlex">
+                        @RamirezAlex
                     </a>
                 </p>
             </picture>
