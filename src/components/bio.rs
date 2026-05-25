@@ -4,19 +4,20 @@ use leptos::*;
 pub fn Bio() -> impl IntoView {
     view! {
         <section id="bio">
-            <picture>
+            <div class="bio-avatar">
                 <img
-                    class="profile-biok-image"
-                    src="../images/ramirezalex-white.png"
+                    class="profile-bio-image"
+                    src="/images/ramirezalex-white.jpg"
                     alt="Alex Ramirez"
                 />
-                <p>
-                    Written by <strong>Alex Ramirez.</strong> Alex is Software Developer based in Medellin, Colombia with experience in different programming languages and technologies, particularly Rust and TypeScript. He also is very interested in the Web3 ecosystem, espcially in Solana Blockchain.
-                    <a href="https://x.com/RamirezAlex">
-                        @RamirezAlex
-                    </a>
-                </p>
-            </picture>
+            </div>
+            <p>
+                Written by <strong>Alex Ramirez.</strong> Alex is a software developer based in Medellin, Colombia with experience in different programming languages and technologies, particularly Rust and TypeScript. He is also very interested in the Web3 ecosystem, especially Solana.
+                " "
+                <a href="https://x.com/RamirezAlex">
+                    "@RamirezAlex"
+                </a>
+            </p>
         </section>
     }
 }

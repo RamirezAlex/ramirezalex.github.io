@@ -667,6 +667,18 @@ footer.site-footer {
   line-height: 1.8;
 }
 
+.blog-article ul,
+.blog-article ol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 28px;
+}
+
+.blog-article li {
+  padding-left: 4px;
+}
+
 .blog-article h2,
 .blog-article h3 {
   color: var(--text);
@@ -715,6 +727,52 @@ footer.site-footer {
 
 .code-macro {
   color: #67E8F9;
+}
+
+#bio {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 760px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.bio-avatar {
+  display: block;
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
+  max-width: 96px;
+  max-height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+#bio .profile-bio-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+#bio p {
+  color: var(--text-muted2);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+#bio strong {
+  color: var(--text);
+}
+
+#bio a {
+  color: var(--accent);
 }
 
 /* ── Responsive ───────────────────────────────────────────────── */
@@ -770,6 +828,10 @@ footer.site-footer {
     padding: 20px 24px;
     text-align: center;
   }
+
+  #bio {
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
@@ -778,5 +840,9 @@ footer.site-footer {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
+  }
+
+  #bio {
+    flex-direction: column;
   }
 }
